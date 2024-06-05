@@ -11,14 +11,14 @@ function App() {
   const [vatRate, setVatRate] = useState(20.0);
 
   const handleNetPriceChange = (price) => {
-    const gross_price = price * ((vatRate / 100) + 1);
+    const gross_price = round(price * ((vatRate / 100) + 1),2);
     setNetPrice(price);
     setGrossPrice(gross_price);
     setVatToPay(gross_price - price);
   };
 
   const handleGrossPriceChange = (price) => {
-    const net_price = price / ((vatRate / 100) + 1);
+    const net_price = round(price / ((vatRate / 100) + 1),2);
     setNetPrice(net_price);
     setGrossPrice(price);
     setVatToPay(price - net_price);
