@@ -10,15 +10,15 @@ function App() {
   const [vatToPay, setVatToPay] = useState(0.0);
   const [vatRate, setVatRate] = useState(20.0);
 
-  var string_Net_Price = "";
-  var string_Gross_Price = "";
-  var interim_gross_price = 0;
-  var interim_net_price = 0;
+  let string_Net_Price = "";
+  let string_Gross_Price = "";
+  let interim_gross_price = 0;
+  let interim_net_price = 0;
 
 
   const handleNetPriceChange = (price) => {
-    var interim_gross_price = price * ((vatRate / 100) + 1);
-    var string_Gross_Price = interim_gross_price.toFixed(2);
+    let interim_gross_price = price * ((vatRate / 100) + 1);
+    let string_Gross_Price = interim_gross_price.toFixed(2);
     const gross_Price = parseFloat(string_Gross_Price);
     setNetPrice(price);
     setGrossPrice(gross_Price);
@@ -26,8 +26,8 @@ function App() {
   };
 
   const handleGrossPriceChange = (price) => {
-    var interim_net_price = price * ((vatRate / 100) + 1);
-    var string_Net_Price = interim_net_price.toFixed(2);
+    let interim_net_price = price * ((vatRate / 100) + 1);
+    let string_Net_Price = interim_net_price.toFixed(2);
     const net_Price = parseFloat(string_Net_Price);
     setNetPrice(net_Price);
     setGrossPrice(price);
